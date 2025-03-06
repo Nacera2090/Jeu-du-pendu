@@ -1,0 +1,206 @@
+body {
+    
+    background-image: url('image.jpg');
+    background-size : cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 0;
+    padding: 0;
+} 
+
+.span {
+    font-family: "Courier", monospace;  /* Police rétro, type monospace */
+    font-size: 30px;                    /* Taille de police grande pour l'effet rétro */
+    font-weight: bold;                  /* Texte en gras */
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;  /* Ombre lumineuse rouge */
+    color: #00FF00;                     /* Couleur verte fluo */
+    background-color: black;            /* Fond noir */
+    border: 2px solid #ff00ff;          /* Bordure rose fluo */
+    padding: 0 10px;                    /* Espace autour du texte */
+    /* margin-right: 5px;                  Espace entre les lettres */
+    display: inline-block;              /* Les éléments s'affichent sur la même ligne */
+    text-align: center;                 /* Centrer le texte dans le span */
+}
+
+#mot-container{
+     /* Positionnement vers le haut */
+     position: fixed;                   /* Fixe l'élément dans la fenêtre */
+     top: 10px;                         /* Place l'élément tout en haut */
+     left: 50%;                         /* Place l'élément au centre horizontalement */
+     transform: translateX(-50%);       /*Centrage exact horizontalement */
+     z-index: 1000;                     /* S'assurer que l'élément est au-dessus des autres */
+     margin-top: 10px;                  /* Éventuellement, espacement depuis le haut */
+     display: flex;
+
+}
+
+
+
+/* Style du score avec effet rétro */
+#score {
+    font-family: 'PixelFont', monospace; /* Police type monospace rétro */
+    font-size: 10px;                    /* Taille de police grande pour l'effet rétro */
+    font-weight: bold;                  /* Texte en gras */
+    color: #b30d0b;                     /* Couleur verte fluo pour un effet rétro */
+    background-color: black;            /* Fond noir pour un contraste élevé */
+    border: 2px solid #7a0909;          /* Bordure rose fluo autour du score */
+    padding: 10px 20px;                 /* Espacement autour du texte pour le rendre plus visible */
+    text-align: center;                 /* Centrer le texte dans la div */
+    display: inline-block;              /* Garder l'élément comme un bloc en ligne */
+    position: absolute;                 /* Positionner le score de manière absolue */
+    bottom: 70px;                       /* Placer le score en haut de la page */
+    left: 50%;                          /* Centrer horizontalement */
+    transform: translateX(-50%);        /* Centrer parfaitement */
+    text-shadow: 0 0 10px #d79191, 0 0 10px #d1b2b2, 0 0 10px #ff0000; /* Ombre lumineuse rouge */
+    animation: retroBlink 0.5s alternate infinite; /* Animation de clignotement rétro */
+}
+
+/* Animation de clignotement rétro */
+@keyframes retroBlink {
+    0% { opacity: 1; } /* Complètement visible */
+    50% { opacity: 0.5; } /* Moins visible (semi-transparent) */
+    100% { opacity: 1; } /* Revenir à l'opacité maximale */
+}
+
+
+/* Conteneur pour Accueil et Restart */
+#menu-buttons {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;                      /* Place le conteneur au centre horizontalement */
+    transform: translateX(-50%);    /* Centre exact */
+    display: flex;
+    gap: 20px;                      /* Espacement entre les boutons */
+    z-index: 1000;
+}
+
+/* Boutons Accueil et Restart */
+#accueil, #restart {
+    font-family: "Courier", monospace;
+    font-size: 16px;
+    font-weight: bold;
+    color: #00fbff;
+    background-color: #000;
+    border: 2px solid #ff00ff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #ff00ff;
+    box-shadow: 0 0 8px #00ff00, inset 0 0 5px #ff00ff;
+    transition: transform 0.1s, box-shadow 0.3s;
+}
+
+/* Effet de survol pour Accueil et Restart */
+#accueil:hover, #restart:hover {
+    color: #ff00ff;
+    border-color: #00ff00;
+    transform: scale(1.1);
+    box-shadow: 0 0 12px #ff00ff, 0 0 20px #00ff00, inset 0 0 10px #00ff00;
+}
+
+
+
+/* Conteneurs pour clavier gauche et droit */
+#clavier-gauche, #clavier-droit {
+    position: fixed;
+    bottom: 100px;
+    width: 140px;              
+    background-color: #000;
+    border: 3px solid #31b0e3;
+    border-radius: 50px;
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;           
+    gap: 6px;
+    box-shadow: 0 0 15px #44caef, 0 0 30px #ff00ff;
+    z-index: 1000;
+}
+
+#clavier-gauche {
+    left: 5%; /* Positionnement à gauche */
+}
+
+#clavier-droit {
+    right: 5%; /* Positionnement à droite */
+}
+
+/* Style des boutons de clavier */
+#clavier-gauche button, #clavier-droit button {
+    font-family: "Courier", monospace;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px;
+    color: #00fbff;
+    background-color: #000;
+    border: 2px solid #ff00ff;
+    border-radius: 50px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #ff00ff;
+    box-shadow: 0 0 8px #00ff00, inset 0 0 5px #ff00ff;
+    transition: transform 0.1s, box-shadow 0.3s;
+}
+
+/* Effet de survol pour les boutons */
+#clavier-gauche button:hover, #clavier-droit button:hover {
+    color: #ff00ff;
+    border-color: #00ff00;
+    transform: scale(1.1);
+    box-shadow: 0 0 12px #ff00ff, 0 0 20px #00ff00, inset 0 0 10px #00ff00;
+}
+
+.lettreclique{
+
+    color: #ff00ff;
+    border-color: #00ff00;
+    transform: scale(1.1);
+    box-shadow: 0 0 12px #ff00ff, 0 0 20px #00ff00, inset 0 0 10px #00ff00; 
+
+
+}
+
+
+#console img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    position: relative;
+    top: -20px; /* Remonte l'image de 2 cm (environ 20 pixels) */
+}
+
+
+#message-container {
+    position: absolute;    /* Positionne le conteneur sous l'image */
+    bottom: 100px;          /* Décale le conteneur 20px depuis le bas de l'écran ou de la zone d'image */
+    left: 50%;             /* Centrer horizontalement */
+    transform: translateX(-50%); /* Pour un centrage parfait */
+    color: #fff;           /* Texte en blanc pour contraster sur fond sombre */
+    font-family: "Courier", monospace;
+    font-size: 20px;       /* Taille du texte */
+    text-align: center;    /* Centrer le texte dans le conteneur */
+    width: 100%;           
+    padding: 10px;
+    z-index: 1000;         
+}
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+       

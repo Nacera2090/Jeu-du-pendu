@@ -1,0 +1,88 @@
+/* Style global du body */
+body {
+    background-image: url("image1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Commence en haut */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style du titre */
+h1 {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 3em;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 
+      0 0 5px #ffffff, 
+      0 0 10px #ffffff, 
+      0 0 20px #00e6e6, 
+      0 0 30px #00e6e6, 
+      0 0 40px #00e6e6, 
+      0 0 50px #00e6e6, 
+      0 0 75px #00e6e6;
+    animation: glow 1.5s ease-in-out infinite alternate;
+    margin-bottom: 20px; /* Espace entre le titre et les boutons */
+}
+
+/* Animation du glow pour créer l'effet néon clignotant */
+@keyframes glow {
+    0% {
+        text-shadow: 
+          0 0 5px #ffffff, 
+          0 0 10px #ffffff, 
+          0 0 20px #00e6e6, 
+          0 0 30px #00e6e6, 
+          0 0 40px #00e6e6, 
+          0 0 50px #00e6e6, 
+          0 0 75px #00e6e6;
+    }
+    100% {
+        text-shadow: 
+          0 0 10px #ffffff, 
+          0 0 20px #ffffff, 
+          0 0 30px #00e6e6, 
+          0 0 40px #00e6e6, 
+          0 0 50px #00e6e6, 
+          0 0 75px #00e6e6, 
+          0 0 100px #00e6e6;
+    }
+}
+
+/* Style des boutons d'image */
+.image-level-button {
+    width: 90px;
+    height: auto;
+    margin: 40px;
+    cursor: pointer;
+    /* border: 5px solid #f5c5f5; */
+    border-radius: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Effet de survol pour les boutons */
+.image-level-button:hover {
+    transform: scale(1.1);
+}
+
+/* Conteneur des boutons */
+#buttons-container {
+    display: flex;
+    justify-content: center; /* Aligne les boutons horizontalement */
+    align-items: center;
+    position: absolute; /* Positionne absolument les boutons */
+    bottom: 1px; /* Espace de 20px du bas */
+    left: 50%; /* Centrer horizontalement */
+    transform: translateX(-50%); /* Ajuster le centrage */
+    width: 50%;
+}
+
+
+
+
